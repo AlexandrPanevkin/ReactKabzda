@@ -1,33 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./Components/Accordion";
-import Rating from "./Components/Rating";
-import {OnOff} from "./Components/OnOff";
+import Rating, {RatingPropsType, RatingValueType} from "./Components/Rating";
+import {UncontrolledOnOff} from "./Components/UncontrolledOnOff";
 import UncontrolledAccordion from "./Components/UncontrolledAccordion";
 import UncontrolledRating from "./Components/UncontrolledRating";
+import Accordion from "./Components/Accordion";
+import {OnOff} from "./Components/OnOff";
+
+
 
 function App() {
-    console.log('App rendering')
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [collapsed, setCollapsed] =useState<boolean>(false)
+    const[on, setOn] = useState(false)
     return (
         <div className='App'>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'Barabarabara'}/>
+
             Article 1
-            <Rating value={0}/>
-            {/*<Accordion titleValue={'Меню 1'} collapsed={false}/>*/}
+            {/*<Rating value={0}/>*/}
+            <Accordion titleValue={'Меню 1'} collapsed={collapsed} onClick={()=>setCollapsed(!collapsed)}/>
             {/*<Accordion titleValue={'Меню 2'} collapsed={true}/>*/}
-            <UncontrolledAccordion titleValue={'Меню 1'}/>
-            <UncontrolledAccordion titleValue={'Меню 2'}/>
+            {/*<UncontrolledAccordion titleValue={'Меню 1'}/>*/}
+            {/*<UncontrolledAccordion titleValue={'Меню 2'}/>*/}
+
             Article 2
-            <Rating value={1}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
             {/*<Rating value={5}/>*/}
-            <UncontrolledRating />
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
+            {/*<UncontrolledRating />*/}
+            {/*<UncontrolledOnOff/>*/}
+            {/*<UncontrolledOnOff/>*/}
+            {/*<UncontrolledOnOff/>*/}
+            <OnOff on={on} setOn={setOn} />
         </div>
     );
 }
@@ -37,7 +45,6 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log('PageTitle rendering')
     return (
         <h1>{props.title}</h1>
     );
