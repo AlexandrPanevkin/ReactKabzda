@@ -3,7 +3,7 @@ import './App.css';
 import {Rating, RatingPropsType, RatingValueType} from "./Components/Rating/Rating";
 import {UncontrolledOnOff} from "./Components/UncontrolledOnOff/UncontrolledOnOff";
 import UncontrolledAccordion from "./Components/UncontrolledAccordion/UncontrolledAccordion";
-import UncontrolledRating from "./Components/UncontrolledRating/UncontrolledRating";
+
 
 import {OnOff} from "./Components/OnOff/OnOff";
 import { Accordion } from './Components/Accordion/Accordion';
