@@ -14,6 +14,8 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [collapsed, setCollapsed] =useState<boolean>(false)
     const[on, setOn] = useState(false)
+    const items = [{value: 1, title: 'Alex'}, {value: 2, title: 'Max'}, {value:3, title: 'Serge'}]
+
     return (
         <div className='App'>
             <PageTitle title={'This is APP component'}/>
@@ -21,7 +23,7 @@ function App() {
 
             Article 1
             {/*<Rating value={0}/>*/}
-            <Accordion titleValue={'Меню 1'} collapsed={collapsed} onClick={()=>setCollapsed(!collapsed)}/>
+            <Accordion titleValue={'Меню 1'} collapsed={collapsed} onClick={()=>setCollapsed(!collapsed)} items={items}/>
             {/*<Accordion titleValue={'Меню 2'} collapsed={true}/>*/}
             {/*<UncontrolledAccordion titleValue={'Меню 1'}/>*/}
             {/*<UncontrolledAccordion titleValue={'Меню 2'}/>*/}

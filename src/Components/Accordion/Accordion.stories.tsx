@@ -31,5 +31,5 @@ UncollapsedMode.args = {
 
 export const ModeChanging = () => {
     const [value, setValue] = useState(true)
-    return <Accordion titleValue={'Menu'} collapsed={value} onClick={() => setValue(!value)}/>
+    return <Accordion items = {[{value: 1, title: 'Alex'}, {value: 2, title: 'Max'}, {value:3, title: 'Serge'}]} titleValue={'Menu'} collapsed={value} onClick={() => setValue(!value)}/>
 }
