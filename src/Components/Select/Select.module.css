@@ -1,0 +1,14 @@
+.select .main {
+    border: 1px black solid
+}
+
+.items {
+    padding: 5px;
+    position: absolute;
+    border: 1px black solid
+}
+
+.item.selected {
+    background-color: dodgerblue;
+    color: white
+}
