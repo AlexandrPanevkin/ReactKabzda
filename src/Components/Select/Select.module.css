@@ -1,5 +1,6 @@
 .select .main {
-    border: 1px black solid
+    border: 1px black solid;
+    padding: 5px;
 }
 
 .items {
